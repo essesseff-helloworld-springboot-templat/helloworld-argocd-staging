@@ -1,17 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: hello-world-staging
+  name: helloworld-staging
   namespace: argocd
   labels:
-    app: hello-world
+    app: helloworld
     environment: staging
     essesseff: "true"
     configenvrepoid: "{{REPOSITORY_ID}}"
 spec:
   project: default
   source:
-    repoURL: https://github.com/essesseff-hello-world-flask-template/hello-world-config-staging
+    repoURL: https://github.com/essesseff-helloworld-springboot-templat/helloworld-config-staging
     targetRevision: main
     path: .
     helm:
@@ -19,7 +19,7 @@ spec:
         - values.yaml
   destination:
     server: https://kubernetes.default.svc
-    namespace: essesseff-hello-world-flask-template
+    namespace: essesseff-helloworld-springboot-templat
   syncPolicy:
     automated:
       prune: true
@@ -37,8 +37,8 @@ spec:
         maxDuration: 3m
   revisionHistoryLimit: 10
   info:
-    - name: hello-world
-      value: "hello-world GitOps deployment managed by essesseff"
+    - name: helloworld
+      value: "helloworld GitOps deployment managed by essesseff"
     - name: environment
       value: "staging"
 

@@ -1,16 +1,16 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: hello-world-argocd-staging
+  name: helloworld-argocd-staging
   namespace: argocd
   labels:
-    app: hello-world
+    app: helloworld
     environment: staging
     essesseff: "true"
 spec:
   project: default
   source:
-    repoURL: https://github.com/essesseff-hello-world-flask-template/hello-world-argocd-staging
+    repoURL: https://github.com/essesseff-helloworld-springboot-templat/helloworld-argocd-staging
     targetRevision: main
     path: argocd
   destination:
