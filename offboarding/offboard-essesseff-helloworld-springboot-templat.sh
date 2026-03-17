@@ -2,7 +2,7 @@
 set -e
 
 # Templated variables - replaced at onboarding
-NAMESPACE="essesseff-helloworld-springboot-templat"
+NAMESPACE="{{K8S_NAMESPACE}}"
 
 echo "=========================================="
 echo "⚠️  NAMESPACE OFFBOARDING WARNING ⚠️"
