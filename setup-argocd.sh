@@ -13,7 +13,7 @@ set -e
 
 # Override these if they're set in .env, otherwise use defaults
 APP_NAME="helloworld"
-GITHUB_ORG="essesseff-helloworld-springboot-templat"
+K8S_NAMESPACE="{{K8S_NAMESPACE}}"
 ENVIRONMENT="staging"
 REPOSITORY_ID="{{REPOSITORY_ID}}"
 
@@ -335,7 +335,7 @@ echo ""
 echo "✅ Verifying configuration..."
 
 # Check if secrets exist
-if kubectl get secret ghcr-credentials -n ${GITHUB_ORG} &> /dev/null; then
+if kubectl get secret ghcr-credentials -n ${K8S_NAMESPACE} &> /dev/null; then
   echo "  ✓ Secret 'ghcr-credentials' exists"
 else
   echo "  ✗ Secret 'ghcr-credentials' not found"
