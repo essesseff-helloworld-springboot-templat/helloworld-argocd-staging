@@ -3,7 +3,7 @@ set -e
 
 # Templated variables - replaced at onboarding
 APP_NAME="helloworld"
-NAMESPACE="essesseff-helloworld-springboot-templat"
+NAMESPACE="{{K8S_NAMESPACE}}"
 ENV="staging"
 GITHUB_REPO_ID="{{REPOSITORY_ID}}"
 
